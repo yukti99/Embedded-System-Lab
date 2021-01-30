@@ -1,0 +1,3 @@
+Write a program in embedded C to display the pressed key of hex keypad on LCD and LED.
+The problem statement is that a key(from 0 to 7) is pressed in hex keypad, 
+and then that number is shown on LCD and a unique LED is also turned on for that corresponding number.  

@@ -1,0 +1,17 @@
+Ques-1:
+DIP: Dual in-line package switch
+Write a program in Embedded c to simulate the working of a DIP.The program should be able to provide a manual control of LED to the DIP switch
+to enable or disable led's by switching dip switches on or off, i.e. when the dip switch is turned on, the corresponding led should light up. 
+
+
+Ques-2:
+PIR: Passive Infrared Sensor 
+Write a program in Embedded c to simulate the working of a PIR. In this program, the pir sensor should detect human motion and consequently trigger 
+LED light to turn on or off. Whenever the human motion is detected it is turned on and if no such motion is sensed by PIR then it is turned off.
+
+
+
+Ques-3:
+Proximity Sensor
+Write a program in Embedded c to simulate a simple metal detector which produces a buzzer sound whenever the proximity sensor detects metal through its port. 
+When an object is sensed nearby, the buzzer should be enabled to indicate it.

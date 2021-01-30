@@ -1,0 +1,52 @@
+C51 COMPILER V9.00   LCD3                                                                  02/13/2020 10:35:57 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE LCD3
+OBJECT MODULE PLACED IN lcd3.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lcd3.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          //////////// PIN DEFINED ///////////////
+   3          #define KEYPAD_PORT  P0
+   4          #define DATA P1
+   5          //control port2
+   6          sbit RS=P2^0;
+   7          sbit E=P2^1;
+   8          #include"delay.h"
+   9          #include"lcd.h"
+  10          #include"keypad.h"
+  11          
+  12          void main(void)
+  13          {
+  14   1        int counter=0;
+  15   1        unsigned char key;
+  16   1        init_lcd();                           //lcd init.
+  17   1        cmd_lcd(0x80);                        //Set curser position
+  18   1        string_lcd("Press key : ");        //Display string
+  19   1        cmd_lcd(0xc0);
+  20   1        while(1){        
+  21   2              key = keyscan();                        //Scan keypad
+  22   2                      counter++;
+  23   2                      if (counter%15==0){
+  24   3                              counter = 0;
+  25   3                               cmd_lcd(0xc0);
+  26   3                      }
+  27   2              data_lcd(key);                                //Display pressed key on lcd
+  28   2        }
+  29   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    425    ----
+   CONSTANT SIZE    =     13    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,9 @@
+References:
+https://www.pantechsolutions.net/microcontroller-tutorials/how-to-interface-7segment-with-8051-development-board
+https://openlabpro.com/guide/interfacing-seven-segment-display-8051/
+
+Ques-1:
+Write a code in Embedded c so that a moving sentence is displayed on the screen like that in an advertisement board
+
+Ques-2:
+Write a code in Embedded c for Seven-segment display (all numbers from 0 to 9 should be displayed in a digital format)

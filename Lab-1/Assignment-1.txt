@@ -1,0 +1,10 @@
+EMBEDDED SYSTEM LAB - Semester-6, MNIT Jaipur
+
+Familiarize yourself with the new hardware equipment, its connections and coding in Embedded c to simulate the hardware.
+Do appropriate connections and 
+Ques-1:
+write a code in embedded c to demonstrate the working of a simple LED.
+
+Ques-2:
+write a program in embedded C to display a message on LCD.
+

@@ -1,0 +1,17 @@
+Ques-1:
+Write a program in Emedded c to display real time date and time on the lcd
+
+Ques-2:
+Write a program in Embedded c to enable the relay buzzer and simulate different sounds by altering the delay in the code.
+You may use port-1 for the same.
+
+
+
+References:
+date_time.c
+https://www.elprocus.com/rtc-ds1307/
+http://www.exploreembedded.com/wiki/LPC1768:_RTC_Programming
+
+relay_buzzer.c
+https://electrosome.com/interfacing-relay-8051-keil-c/
+https://github.com/ThomCruz/ESDlab/tree/master/lab5

@@ -1,0 +1,124 @@
+C51 COMPILER V9.00   PROG2                                                                 01/28/2021 11:19:32 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE PROG2
+OBJECT MODULE PLACED IN Prog2.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Prog2.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          //input  port3
+   3          sbit RS =       P2 ^ 0;
+   4          sbit E  =       P2 ^ 1;
+   5          void instwrt(void)
+   6          {
+   7   1              RS=0;
+   8   1              E=1;
+   9   1              E=0;
+  10   1      }
+  11          void datawrt(void)
+  12          {
+  13   1              RS=1;
+  14   1              E=1;
+  15   1              E=0;
+  16   1      }
+  17          void delay(void)
+  18          {
+  19   1              unsigned int i;
+  20   1              for(i=0;i<=30000;i++)
+  21   1                      {}
+  22   1      }
+  23          void main(void)
+  24          {
+  25   1      while(1)
+  26   1      {       
+  27   2              P0=0x38;
+  28   2              instwrt();
+  29   2              delay();
+  30   2              P0=0x0E;
+  31   2              instwrt();
+  32   2              delay();
+  33   2              P0=0x01;
+  34   2              instwrt();
+  35   2              delay();
+  36   2              P0=0x06;
+  37   2              instwrt();
+  38   2              delay();
+  39   2              P0=0x83;
+  40   2              instwrt();
+  41   2              delay();
+  42   2              P0='y';
+  43   2              datawrt();
+  44   2              delay();
+  45   2              P0='D';
+  46   2              datawrt();
+  47   2              delay();
+  48   2              P0='V';
+  49   2              datawrt();
+  50   2              delay();
+  51   2              P0='A';
+  52   2              datawrt();
+  53   2              delay();
+  54   2              P0='N';
+  55   2              datawrt();
+C51 COMPILER V9.00   PROG2                                                                 01/28/2021 11:19:32 PAGE 2   
+
+  56   2              delay();
+  57   2              P0='C';
+  58   2              datawrt();
+  59   2              delay();
+  60   2              P0='E';
+  61   2              datawrt();
+  62   2              delay();
+  63   2              /*shift();
+  64   2              delay();*/
+  65   2              P0=0xC3;
+  66   2              instwrt();
+  67   2              delay();
+  68   2              P0='T';
+  69   2              datawrt();
+  70   2              delay();
+  71   2              P0='E';
+  72   2              datawrt();
+  73   2              delay();
+  74   2              P0='C';
+  75   2              datawrt();
+  76   2              delay();
+  77   2              P0='H';
+  78   2              datawrt();
+  79   2              delay();
+  80   2              P0='N';
+  81   2              datawrt();
+  82   2              delay();
+  83   2              P0='O';
+  84   2              datawrt();
+  85   2              delay();
+  86   2              P0='L';
+  87   2              datawrt();
+  88   2              delay();
+  89   2              P0='O';
+  90   2              datawrt();
+  91   2              delay();
+  92   2              P0='G';
+  93   2              datawrt();
+  94   2              delay();
+  95   2              P0='Y';
+  96   2              datawrt();
+  97   2              delay();
+  98   2                      }
+  99   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    218    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

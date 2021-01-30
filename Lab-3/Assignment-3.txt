@@ -1,0 +1,3 @@
+Ques:
+Write a code in Embedded-c and experiment with the working of a relay buzzer. 
+Modify the program to demonstrate changing effects in the sound of the buzzer.

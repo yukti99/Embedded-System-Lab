@@ -1,0 +1,5 @@
+Ques-1:
+Write a program in Embedded c to display any message on the LCD.
+
+Ques-2:
+Write a simple program in Embedded c (use different modules for different functions) to convert hex to lcd. Display pressed key on the LCD.

@@ -1,0 +1,6 @@
+Ques-1:
+Write a code in embedded c for a simple calculator that takes two operands and applies one of the 4 basic mathematical operations 
+i.e. addition, subtraction, multiplication and division. The result must be displayed on the lcd. Different keys can be used for user input 
+
+Ques-2:
+Write a code in embedded c for a counter that displays numbers on the seven segment display from 0 to 9990
