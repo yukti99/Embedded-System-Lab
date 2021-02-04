@@ -1,0 +1,94 @@
+C51 COMPILER V9.00   INCREASINGCOUNTER                                                     02/04/2021 10:44:45 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE INCREASINGCOUNTER
+OBJECT MODULE PLACED IN increasingCounter.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE increasingCounter.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /***************Seven Segments***************/
+   2          /***************Connections******************/
+   3          /**********             SS data --- PORT 0          ******/
+   4          /**********             SS control --- PORT 1/2 ******/
+   5          #include<reg51.h>
+   6          char arr[10]={0xbf,0x86,0xdb,0xcf,0xe6,0xed,0xfd,0x87,0xff,0xef};
+   7          
+   8          /*
+   9                  (dp)gfedcba decides which segment (from provided 8 segment) to be active according to the bits that are s
+             -et
+  10                  (here dp means decimal point)
+  11          
+  12                  0xbf = '0.'
+  13                  0x86 = '1.'
+  14                  0xdb = '2.'
+  15                  0xcf = '3.'
+  16                  0xe6 = '4.'
+  17                  0xed = '5.'
+  18                  0xfd = '6.'
+  19                  0x87 = '7.'
+  20                  0xff = '8.'
+  21                  0xef = '9.'
+  22          */
+  23          
+  24          // Counter from 0.0.0.0. to 9.9.9.9.
+  25          
+  26          
+  27          void delay(void);
+  28          void main(void)
+  29          {
+  30   1              int i,j,k,l,m;  
+  31   1              for(l=0;l<10;l++)
+  32   1              {
+  33   2                      for(k=0;k<10;k++)
+  34   2                      {
+  35   3                              for(j=0;j<10;j++)
+  36   3                              {
+  37   4                                      for(i=0;i<10;i++)
+  38   4                                      {
+  39   5                                              for(m=0;m<50;m++)
+  40   5                                              {
+  41   6                                              P2=0x01;   // chooses rightmost display
+  42   6                                              P0=arr[i];       // sending data
+  43   6                                              
+  44   6                                              delay();
+  45   6                                              P2=0x02;   // chooses 2nd display from right
+  46   6                                              P0=arr[j];         // sending data
+  47   6                                              delay();
+  48   6                                              P2=0x04;   // chooses 3rd display from right
+  49   6                                              P0=arr[k];         // sending data
+  50   6                                              
+  51   6                                              delay();
+  52   6                                              P2=0x08;   // chooses leftmost display
+  53   6                                              P0=arr[l];         //sending data
+  54   6                                              delay();                   
+C51 COMPILER V9.00   INCREASINGCOUNTER                                                     02/04/2021 10:44:45 PAGE 2   
+
+  55   6                                              }
+  56   5                                      }
+  57   4                              
+  58   4      
+  59   4                              }
+  60   3                      
+  61   3                      }
+  62   2              }
+  63   1      }
+  64          void delay(void)          // Causes delay
+  65          {
+  66   1              int f;
+  67   1              for(f=0;f<50;f++);
+  68   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    186    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     10      10
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
