@@ -4,6 +4,7 @@
 void delay();
 
 void main(){	
+	// for rotating leds
 	while(1){
 		P0=0X01;
 		delay();
