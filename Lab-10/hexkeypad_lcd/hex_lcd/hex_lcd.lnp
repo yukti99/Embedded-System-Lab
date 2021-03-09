@@ -1,0 +1,3 @@
+"STARTUP.obj",
+"hex_lcd.obj" 
+TO "hex_lcd" 

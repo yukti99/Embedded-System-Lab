@@ -1,0 +1,48 @@
+C51 COMPILER V9.00   HEX_LCD                                                               03/09/2021 19:58:24 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE HEX_LCD
+OBJECT MODULE PLACED IN hex_lcd.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE hex_lcd.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          //////////// PIN DEFINED ///////////////
+   3          #define KEYPAD_PORT  P0
+   4          #define DATA P1
+   5          #define control port2
+   6          sbit RS=P2^0;
+   7          sbit E=P2^1;
+   8          
+   9          #include"delay.h"
+  10          #include"lcd.h"
+  11          #include"keypad.h"
+  12          
+  13          void main(void)
+  14          {
+  15   1        unsigned char key;
+  16   1        init_lcd();                           //lcd init.
+  17   1        cmd_lcd(0x80);                        //Set curser position
+  18   1        string_lcd("Press key : ");        //Display string
+  19   1        while(1)
+  20   1        {
+  21   2              cmd_lcd(0xc0);
+  22   2              key = keyscan();                        //Scan keypad
+  23   2              data_lcd(key);                                //Display pressed key on lcd
+  24   2        }
+  25   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    423    ----
+   CONSTANT SIZE    =     29    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      16
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,180 @@
+C51 COMPILER V9.00   HEX_LCD                                                               02/04/2021 12:31:57 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE HEX_LCD
+OBJECT MODULE PLACED IN hex_lcd.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE hex_lcd.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          //////////// PIN DEFINED ///////////////
+   3          #define KEYPAD_PORT  P0
+   4          #define DATA P1
+   5          //control port2
+   6          sbit RS=P2^0;
+   7          sbit E=P2^1;
+   8          
+   9          
+  10           void delay(int num)
+  11          {
+  12   1      int a;
+  13   1      for(a=0;a<=num;a++);
+  14   1      }
+  15          
+  16           void delay1()
+  17          {
+  18   1      int a;
+  19   1      for(a=0;a<=1000;a++);
+  20   1      }
+  21          
+  22          
+  23          
+  24          unsigned char keyscan()
+  25          {
+  26   1        while(1)
+  27   1        {
+  28   2              KEYPAD_PORT = 0XeF;
+  29   2              delay(1000);  /////must for response at port when key press
+  30   2              if((KEYPAD_PORT&0X01)==0){while((KEYPAD_PORT&0X01)==0); return 'C';}
+  31   2              if((KEYPAD_PORT&0X02)==0){while((KEYPAD_PORT&0X02)==0); return '8';}
+  32   2              if((KEYPAD_PORT&0X04)==0){while((KEYPAD_PORT&0X04)==0); return '4';}
+  33   2              if((KEYPAD_PORT&0X08)==0){while((KEYPAD_PORT&0X08)==0); return '0';}
+  34   2      
+  35   2              KEYPAD_PORT = 0XdF;
+  36   2              delay(1000);
+  37   2              if((KEYPAD_PORT&0X01)==0){while((KEYPAD_PORT&0X01)==0); return 'D';}
+  38   2              if((KEYPAD_PORT&0X02)==0){while((KEYPAD_PORT&0X02)==0); return '9';}
+  39   2              if((KEYPAD_PORT&0X04)==0){while((KEYPAD_PORT&0X04)==0); return '5';}
+  40   2              if((KEYPAD_PORT&0X08)==0){while((KEYPAD_PORT&0X08)==0); return '1'  ;}
+  41   2      
+  42   2              KEYPAD_PORT = 0XbF;
+  43   2              delay(1000);
+  44   2              if((KEYPAD_PORT&0X01)==0){while((KEYPAD_PORT&0X01)==0); return 'E';}
+  45   2              if((KEYPAD_PORT&0X02)==0){while((KEYPAD_PORT&0X02)==0); return 'A';}
+  46   2              if((KEYPAD_PORT&0X04)==0){while((KEYPAD_PORT&0X04)==0); return '6';}
+  47   2              if((KEYPAD_PORT&0X08)==0){while((KEYPAD_PORT&0X08)==0); return '2';}
+  48   2      
+  49   2              KEYPAD_PORT = 0X7F;
+  50   2              delay(1000);
+  51   2              if((KEYPAD_PORT&0X01)==0){while((KEYPAD_PORT&0X01)==0); return 'F';}
+  52   2              if((KEYPAD_PORT&0X02)==0){while((KEYPAD_PORT&0X02)==0); return 'B';}
+  53   2              if((KEYPAD_PORT&0X04)==0){while((KEYPAD_PORT&0X04)==0); return '7';}
+  54   2              if((KEYPAD_PORT&0X08)==0){while((KEYPAD_PORT&0X08)==0); return '3';}
+  55   2         }
+C51 COMPILER V9.00   HEX_LCD                                                               02/04/2021 12:31:57 PAGE 2   
+
+  56   1      }
+  57          
+  58          void cmd_lcd (unsigned char dat)    // function to write command at lcd port
+  59          {
+  60   1      DATA=dat;
+  61   1      RS=0;  //clear RS (ie. RS=0) to write command
+  62   1      E=1;  // send  H-L pulse at E pin
+  63   1      delay(100);
+  64   1      E=0;
+  65   1      delay(100);
+  66   1      }
+  67          
+  68          void data_lcd (unsigned char dat) // function to write data at lcd port
+  69          {
+  70   1      DATA=dat;
+  71   1      RS=1; // set RS=1 to write DATA
+  72   1      E=1;  // send  H-L pulse at E pin
+  73   1      delay(100);
+  74   1      E=0;
+  75   1      delay(100);  
+  76   1      }
+  77          
+  78          void init_lcd()         // function to initialize the LCD at power on time
+  79          {
+  80   1      cmd_lcd(0x38); // 2x16 display select
+  81   1      delay(50000);
+  82   1      cmd_lcd(0x0c); // display on cursor off command
+  83   1      delay(1000);
+  84   1      cmd_lcd(0x06); // automatic cursor movement to right
+  85   1      delay(1000);
+  86   1      cmd_lcd(0x01); // lcd clear command
+  87   1      delay(5000);
+  88   1      }
+  89          
+  90          void string_lcd(unsigned char *str)   // function to display string to lcd
+  91          {
+  92   1      while(*str!='\0')   // '\0' is null char as last char of pointer is null
+  93   1      {
+  94   2      data_lcd(*str);
+  95   2      str++;
+  96   2      }
+  97   1       }
+  98          
+  99          void main(void)
+ 100          {
+ 101   1        unsigned char key;
+ 102   1        init_lcd();                           //lcd init.
+ 103   1        cmd_lcd(0x80);                        //Set curser position
+ 104   1        string_lcd("Press key : ");        //Display string
+ 105   1        while(1)
+ 106   1        {
+ 107   2              cmd_lcd(0xc0);
+ 108   2              key = keyscan();                        //Scan keypad
+ 109   2              switch(key){
+ 110   3                case '0':
+ 111   3      data_lcd(key);                                //Display pressed key on lcd
+ 112   3                  P0 = 0X01; // Turning on 1st led
+ 113   3                  delay1();
+ 114   3                  break;
+ 115   3                case '1':
+ 116   3      data_lcd(key);                                //Display pressed key on lcd
+ 117   3                  P0 = 0X02; // Turning on 2nd led
+C51 COMPILER V9.00   HEX_LCD                                                               02/04/2021 12:31:57 PAGE 3   
+
+ 118   3                  delay1();
+ 119   3                  break;
+ 120   3                case '2':
+ 121   3      data_lcd(key);                                //Display pressed key on lcd
+ 122   3                  P0 = 0X04; // Turning on 3rd led
+ 123   3                  delay1();
+ 124   3                  break;
+ 125   3                case '3':
+ 126   3      data_lcd(key);                                //Display pressed key on lcd
+ 127   3                  P0 = 0X08; // Turning on 4th led
+ 128   3                  delay1();
+ 129   3                  break;
+ 130   3                case '4':
+ 131   3      data_lcd(key);                                //Display pressed key on lcd
+ 132   3                  P0 = 0X10; // Turning on 5th led
+ 133   3                  delay1();
+ 134   3                  break;
+ 135   3                case '5':
+ 136   3      data_lcd(key);                                //Display pressed key on lcd
+ 137   3                  P0 = 0X20; // Turning on 6th led
+ 138   3                  delay1();
+ 139   3                  break;
+ 140   3                case '6':
+ 141   3      data_lcd(key);                                //Display pressed key on lcd
+ 142   3                  P0 = 0X40; // Turning on 7th led
+ 143   3                  delay1();
+ 144   3                  break;
+ 145   3                case '7':
+ 146   3      data_lcd(key);                                //Display pressed key on lcd
+ 147   3                  P0 = 0X80; // Turning on 8th led
+ 148   3                  delay1();
+ 149   3                  break;
+ 150   3          }
+ 151   2        }
+ 152   1      }
+ 153          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    531    ----
+   CONSTANT SIZE    =     13    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

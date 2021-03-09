@@ -1,0 +1,137 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\yukti\Desktop\q6\hex_lcd.uvproj
+Project File Date:  02/04/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling hex_lcd.c...
+linking...
+Program Size: data=9.0 xdata=0 code=588
+creating hex file from "hex_lcd"...
+"hex_lcd" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling hex_lcd.c...
+linking...
+Program Size: data=9.0 xdata=0 code=576
+creating hex file from "hex_lcd"...
+"hex_lcd" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling hex_lcd.c...
+KEYPAD.H(7): error C101: ''C': invalid character constant
+KEYPAD.H(7): error C141: syntax error near '\', expected ';'
+KEYPAD.H(7): error C101: '';': invalid character constant
+KEYPAD.H(7): error C141: syntax error near '';'
+KEYPAD.H(7): error C141: syntax error near '}'
+KEYPAD.H(8): error C101: ''8': invalid character constant
+KEYPAD.H(8): error C141: syntax error near '\', expected ';'
+KEYPAD.H(8): error C101: '';': invalid character constant
+KEYPAD.H(8): error C141: syntax error near '';'
+KEYPAD.H(8): error C141: syntax error near '}'
+KEYPAD.H(9): error C101: ''4': invalid character constant
+KEYPAD.H(9): error C141: syntax error near '\', expected ';'
+KEYPAD.H(9): error C101: '';': invalid character constant
+KEYPAD.H(9): error C141: syntax error near '';'
+KEYPAD.H(9): error C141: syntax error near '}'
+KEYPAD.H(10): error C101: ''0': invalid character constant
+KEYPAD.H(10): error C141: syntax error near '\', expected ';'
+KEYPAD.H(10): error C101: '';': invalid character constant
+KEYPAD.H(10): error C141: syntax error near '';'
+KEYPAD.H(10): error C141: syntax error near '}'
+KEYPAD.H(14): error C101: ''D': invalid character constant
+KEYPAD.H(14): error C141: syntax error near '\', expected ';'
+KEYPAD.H(14): error C101: '';': invalid character constant
+KEYPAD.H(14): error C141: syntax error near '';'
+KEYPAD.H(14): error C141: syntax error near '}'
+KEYPAD.H(15): error C101: ''9': invalid character constant
+KEYPAD.H(15): error C141: syntax error near '\', expected ';'
+KEYPAD.H(15): error C101: '';': invalid character constant
+KEYPAD.H(15): error C141: syntax error near '';'
+KEYPAD.H(15): error C141: syntax error near '}'
+KEYPAD.H(16): error C101: ''5': invalid character constant
+KEYPAD.H(16): error C141: syntax error near '\', expected ';'
+KEYPAD.H(16): error C101: '';': invalid character constant
+KEYPAD.H(16): error C141: syntax error near '';'
+KEYPAD.H(16): error C141: syntax error near '}'
+KEYPAD.H(17): error C101: ''1': invalid character constant
+KEYPAD.H(17): error C141: syntax error near '\', expected ';'
+KEYPAD.H(17): error C101: '' ': invalid character constant
+KEYPAD.H(17): error C141: syntax error near '' '
+KEYPAD.H(21): error C101: ''E': invalid character constant
+KEYPAD.H(21): error C141: syntax error near '\', expected ';'
+KEYPAD.H(21): error C101: '';': invalid character constant
+KEYPAD.H(21): error C141: syntax error near '';'
+KEYPAD.H(21): error C141: syntax error near '}'
+KEYPAD.H(22): error C101: ''A': invalid character constant
+KEYPAD.H(22): error C141: syntax error near '\', expected ';'
+KEYPAD.H(22): error C101: '';': invalid character constant
+KEYPAD.H(22): error C141: syntax error near '';'
+KEYPAD.H(22): error C141: syntax error near '}'
+KEYPAD.H(23): error C101: ''6': invalid character constant
+KEYPAD.H(23): error C141: syntax error near '\', expected ';'
+KEYPAD.H(23): error C101: '';': invalid character constant
+KEYPAD.H(23): error C141: syntax error near '';'
+KEYPAD.H(23): error C141: syntax error near '}'
+KEYPAD.H(24): error C101: ''2': invalid character constant
+KEYPAD.H(24): error C141: syntax error near '\', expected ';'
+KEYPAD.H(24): error C101: '';': invalid character constant
+KEYPAD.H(24): error C141: syntax error near '';'
+KEYPAD.H(24): error C141: syntax error near '}'
+KEYPAD.H(28): error C101: ''F': invalid character constant
+KEYPAD.H(28): error C141: syntax error near '\', expected ';'
+KEYPAD.H(28): error C101: '';': invalid character constant
+KEYPAD.H(28): error C141: syntax error near '';'
+KEYPAD.H(28): error C141: syntax error near '}'
+KEYPAD.H(29): error C101: ''B': invalid character constant
+KEYPAD.H(29): error C141: syntax error near '\', expected ';'
+KEYPAD.H(29): error C101: '';': invalid character constant
+KEYPAD.H(29): error C141: syntax error near '';'
+KEYPAD.H(29): error C141: syntax error near '}'
+KEYPAD.H(30): error C101: ''7': invalid character constant
+KEYPAD.H(30): error C141: syntax error near '\', expected ';'
+KEYPAD.H(30): error C101: '';': invalid character constant
+KEYPAD.H(30): error C141: syntax error near '';'
+KEYPAD.H(30): error C141: syntax error near '}'
+KEYPAD.H(31): error C101: ''3': invalid character constant
+KEYPAD.H(31): error C141: syntax error near '\', expected ';'
+KEYPAD.H(31): error C101: '';': invalid character constant
+KEYPAD.H(31): error C141: syntax error near '';'
+KEYPAD.H(31): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling hex_lcd.c...
+KEYPAD.H(7): error C101: ''C': invalid character constant
+KEYPAD.H(7): error C141: syntax error near '\', expected ';'
+KEYPAD.H(7): error C101: '';': invalid character constant
+KEYPAD.H(7): error C141: syntax error near '';'
+KEYPAD.H(7): error C141: syntax error near '}'
+KEYPAD.H(8): error C101: ''8': invalid character constant
+KEYPAD.H(8): error C141: syntax error near '\', expected ';'
+KEYPAD.H(8): error C101: '';': invalid character constant
+KEYPAD.H(8): error C141: syntax error near '';'
+KEYPAD.H(8): error C141: syntax error near '}'
+KEYPAD.H(9): error C101: ''4': invalid character constant
+KEYPAD.H(9): error C141: syntax error near '\', expected ';'
+KEYPAD.H(9): error C101: '';': invalid character constant
+KEYPAD.H(9): error C141: syntax error near '';'
+KEYPAD.H(9): error C141: syntax error near '}'
+KEYPAD.H(10): error C101: ''0': invalid character constant
+KEYPAD.H(10): error C141: syntax error near '\', expected ';'
+KEYPAD.H(10): error C101: '';': invalid character constant
+KEYPAD.H(10): error C141: syntax error near '';'
+KEYPAD.H(10): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling hex_lcd.c...
+linking...
+Program Size: data=9.0 xdata=0 code=584
+creating hex file from "hex_lcd"...
+"hex_lcd" - 0 Error(s), 0 Warning(s).

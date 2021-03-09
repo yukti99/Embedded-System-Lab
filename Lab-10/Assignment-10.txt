@@ -1,0 +1,3 @@
+Q1. write a program in embedded C to display the pressed key of hex keypad on LCD.
+
+Q2. write a program in embedded C to display the pressed key of hex keypad on 7 Segment Display.
